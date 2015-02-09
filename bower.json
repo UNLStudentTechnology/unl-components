@@ -5,7 +5,7 @@
   "authors": [
     "Hayden Gascoigne <haydengascoigne@gmail.com>"
   ],
-  "description": "Styles for UNL's Polymer based webapps.",
+  "description": "Polymer components for building web apps at UNL.",
   "main": "dist/unl-components.html",
   "keywords": [
     "unl",
