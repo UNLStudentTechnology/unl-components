@@ -59,7 +59,7 @@ To change the toggle bar and toggle button colors separately:
 <link rel="import" href="../unl-radio-button/unl-radio-button.html">
 <link rel="import" href="../core-a11y-keys/core-a11y-keys.html">
 
-<polymer-element name="unl-toggle-button" attributes="checked disabled value" value="false" role="button" aria-pressed="false" tabindex="0">
+<polymer-element name="unl-toggle-button" attributes="checked disabled value" value="0" role="button" aria-pressed="false" tabindex="0">
 <template>
   <core-a11y-keys target="{{}}" keys="space" on-keys-pressed="{{tap}}"></core-a11y-keys>
   <div id="toggleContainer" checked?="{{checked}}" disabled?="{{disabled}}">
@@ -94,7 +94,7 @@ To change the toggle bar and toggle button colors separately:
        * @default false
        */
       checked: {value: false, reflect: true},
-      value: {value: false, reflect: true},
+      value: {value: 0, reflect: true},
 
       /**
        * If true, the toggle button is disabled.  A disabled toggle button cannot
@@ -165,12 +165,13 @@ To change the toggle bar and toggle button colors separately:
     
     checkedChanged: function() {
       this.setAttribute('aria-pressed', Boolean(this.checked));
-      this.setAttribute('value', Boolean(this.checked));
+      this.setAttribute('value', (this.checked ? 1: 0));
       this.fire('core-change');
     },
 
     valueChanged: function() {
-      this.checked = this.value;
+      console.log(this.value);
+      this.checked = (this.value == 1) ? true : false; 
     }
  
   });
