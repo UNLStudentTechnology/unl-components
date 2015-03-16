@@ -6,7 +6,7 @@ Created by Hayden Gascoigne
 
 <polymer-element name="unl-list-item-user" attributes="user">
   <template>
-    <li class="unl-list-item">     
+    <div class="unl-list-item">     
       <template if="{{user}}">
         <div class="user-avatar"><img src="{{user.profile_image}}" alt="User Avatar" class="user-avatar-img"/></div>
         <div class="user-detail">{{user.first_name}} {{user.last_name}}</div>
@@ -14,7 +14,7 @@ Created by Hayden Gascoigne
       <template if="{{!user}}">
         <div class="user-detail">Loading...</div>
       </template>
-    </li>
+    </div>
     <style>
       :host {
         display: block;

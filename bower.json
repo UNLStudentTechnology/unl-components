@@ -25,9 +25,9 @@
   ],
   "dependencies": {
     "webcomponentsjs": "Polymer/webcomponentsjs#master",
-    "unl-style": "~0.1.0"
+    "unl-style": "~0.2.0"
   }, 
   "devDependencies": {
-    "polymer-polymer": "~0.5.4"
+    "polymer-polymer": "~0.5.0"
   }
 }
