@@ -14,7 +14,9 @@ Created by Hayden Gascoigne
       </template>
       <h4>
         {{heading}}
-        <span class="subhead">{{detail}}</span>
+        <template if="{{detail}}">
+          <span class="subhead">{{detail}}</span>
+        </template>
       </h4>
       <content></content>
     </div>

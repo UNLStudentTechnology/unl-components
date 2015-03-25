@@ -4,7 +4,7 @@
 Created by Hayden Gascoigne
 -->
 
-<polymer-element name="unl-list-item-label" attributes="heading label link image active user">
+<polymer-element name="unl-list-item-details" attributes="heading details link image active user">
   <template>
     <div class="unl-list-item {{link ? 'unl-list-item-link' : ''}} {{active ? 'active' : ''}}" horizontal layout wrap>  
       <template if="{{image}}">
@@ -16,9 +16,15 @@ Created by Hayden Gascoigne
       <div class="list-item-image rounded placeholder">{{imagePlaceholder}}</div>
       </template>
       <div class="content" flex>   
-        <div class="heading">{{heading}}</div>
-        <template if="{{label}}">
-          <div class="label">{{label}}</div>
+        <div class="heading">
+          {{heading}}
+          <content select="[heading]"></content>
+        </div>
+        <template if="{{details}}">
+          <div class="details">
+            {{details}}
+            <content select="[details]"></content>
+          </div>
         </template>
       </div>
       <content></content>
@@ -45,7 +51,7 @@ Created by Hayden Gascoigne
   </template>
   <script>
       (function(){
-        Polymer('unl-list-item-label', {
+        Polymer('unl-list-item-details', {
           link: false,
           active: false,
           user: false,
