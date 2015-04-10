@@ -191,7 +191,7 @@ polyfill-next-selector {
 	    -webkit-order: 2;
 	    -ms-flex-order: 2;
 	    order: 2;
-	    position: static;
+	    position: relative;
 	}
 	#drawer {
 	    -webkit-box-flex: 0;

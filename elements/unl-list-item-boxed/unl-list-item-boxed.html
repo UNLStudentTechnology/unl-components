@@ -6,19 +6,21 @@ Created by Hayden Gascoigne
 
 <polymer-element name="unl-list-item-boxed" attributes="heading detail image active link">
   <template>
-    <div class="unl-list-item {{link ? 'unl-list-item-link' : ''}} {{active ? 'active' : ''}}">  
-      <template if="{{image}}">
-        <div class="list-item-image rounded">
-          <img src="{{image}}" alt="List Item Image"/>
-        </div>
-      </template>
-      <h4>
-        {{heading}}
-        <template if="{{detail}}">
-          <span class="subhead">{{detail}}</span>
+    <div class="unl-list-item {{link ? 'unl-list-item-link' : ''}} {{active ? 'active' : ''}}" horizontal layout center center-justified>
+      <div>
+        <template if="{{image}}">
+          <div class="list-item-image rounded">
+            <img src="{{image}}" alt="List Item Image"/>
+          </div>
         </template>
-      </h4>
-      <content></content>
+        <h4>
+          {{heading}}
+          <template if="{{detail}}">
+            <span class="subhead">{{detail}}</span>
+          </template>
+        </h4>
+        <content></content>
+      </div>
     </div>
     <style>
       :host {
